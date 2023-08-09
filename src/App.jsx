@@ -1,5 +1,6 @@
 import './App.css'
 import ProgressLG from "./components/ProgressMd.jsx";
+import ProgressSM from "./components/ProgressSM.jsx";
 
 const stops = [
     {position: 0, name: 'Paris'},
@@ -16,8 +17,10 @@ const App = () => {
 
     return (
         <div>
-            <h6>Position en temps réelle du train</h6>
-            <ProgressLG stops={stops} currentPosition={currentPosition}/>
+            <h3>Position en temps réelle du train</h3>
+            <div>
+                <ProgressSM stops={stops} currentPosition={currentPosition}/>
+            </div>
         </div>
     );
 };

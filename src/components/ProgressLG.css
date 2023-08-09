@@ -96,3 +96,27 @@
 .show-button:hover {
     background-color: #2980b9;
 }
+
+
+@media (max-width: 768px) {
+    .progress-lg {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+    }
+
+    .progress-bar {
+        width: 100%;
+    }
+
+    .anchored-city {
+        bottom: -50px;
+    }
+
+    .progress-lg.show-all .anchored-city {
+        bottom: -100px;
+    }
+}
+
+/* affichage mobile */
