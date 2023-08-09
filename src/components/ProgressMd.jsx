@@ -3,7 +3,7 @@ import './ProgressLG.css';
 
 const ProgressLG = ({ stops, currentPosition }) => {
     const totalStops = stops.length;
-    const stepWidth = 100 / (totalStops - 1);
+    const stepWidth = 2000 / (totalStops - 1); // Utilisation de la largeur en pixels
 
     const getCurrentStopIndex = () => {
         for (let i = 0; i < totalStops - 1; i++) {
@@ -35,8 +35,10 @@ const ProgressLG = ({ stops, currentPosition }) => {
                     style={{ left: `${currentPosition}%` }}
                 ></div>
             </div>
-            <div className="progress-bar">
-                <div className="train-position" style={{ width: `${currentPosition}%` }}></div>
+            <div className="progress-bar-container">
+                <div className="progress-bar">
+                    <div className="train-position" style={{ width: `${currentPosition}%` }}></div>
+                </div>
             </div>
         </div>
     );
