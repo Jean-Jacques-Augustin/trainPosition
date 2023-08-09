@@ -17,12 +17,14 @@ const App = () => {
         <div
             // gerer l'overflow et fixer la largeur du container pour que le scroll soit visible
             style={{
-                width: '500px',
+                width: '800px',
                 overflowX: 'scroll',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100vh'
+                height: '150px',
+                // masquer les scrollbars
+                scrollbarWidth: 'none',
             }}
 
         >

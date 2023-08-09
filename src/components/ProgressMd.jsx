@@ -1,9 +1,9 @@
 import React from 'react';
 import './ProgressLG.css';
 
-const ProgressLG = ({ stops, currentPosition }) => {
+const ProgressLG = ({stops, currentPosition}) => {
     const totalStops = stops.length;
-    const stepWidth = 2000 / (totalStops - 1); // Utilisation de la largeur en pixels
+    const stepWidth = 100 / (totalStops - 1);
 
     const getCurrentStopIndex = () => {
         for (let i = 0; i < totalStops - 1; i++) {
@@ -17,31 +17,25 @@ const ProgressLG = ({ stops, currentPosition }) => {
     const currentStopIndex = getCurrentStopIndex();
     const currentStop = stops[currentStopIndex];
 
-    return (
-        <div className="progress-lg">
+    return (<div className="progress-lg">
             <div className="stepper">
-                {stops.map((stop, index) => (
-                    <div
+                {stops.map((stop, index) => (<div
                         key={index}
                         className={`step ${currentStopIndex === index ? 'active' : ''}`}
-                        style={{ left: `${stop.position}%` }}
+                        style={{left: `${stop.position}%`}}
                     >
-                        {stop.position}%<br />
+                        {stop.position}%<br/>
                         {stop.name}
-                    </div>
-                ))}
+                    </div>))}
                 <div
                     className="train-marker"
-                    style={{ left: `${currentPosition}%` }}
+                    style={{left: `${currentPosition}%`}}
                 ></div>
             </div>
-            <div className="progress-bar-container">
-                <div className="progress-bar">
-                    <div className="train-position" style={{ width: `${currentPosition}%` }}></div>
-                </div>
+            <div className="progress-bar">
+                <div className="train-position" style={{width: `${currentPosition}%`}}></div>
             </div>
-        </div>
-    );
+        </div>);
 };
 
 export default ProgressLG;
